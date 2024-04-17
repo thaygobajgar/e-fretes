@@ -7,7 +7,7 @@ import Main from "./components/Main";
 import { RouterMain } from "./routes/RouterMain";
 
 const App = () => {
-  const { loading } = useContext(UserContext);
+  // const { loading } = useContext(UserContext);
   return (
     <>
       <ToastContainer position="top-center" autoClose={3000} theme="colored" />
