@@ -20,7 +20,8 @@ export const StyledButton = styled(BaseButton)`
 
   /* CRIAR O BUTTONSTYLE PARA PADRAO DE CORES */
 
-  ${({ buttonStyle, theme }) => {
+  ${({ buttonStyle }) => {
+    //adicionar theme como 2 parametro
     switch (buttonStyle) {
       case "default":
         return css`

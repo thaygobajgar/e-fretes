@@ -1,8 +1,6 @@
-import { ForwardedRef, InputHTMLAttributes, forwardRef, useState } from "react";
-import { FieldError } from "react-hook-form";
+import { ForwardedRef, forwardRef } from "react";
 import { IInputProps } from "../interfaces";
-import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
-import { StyledRadioInput, StyledTextInput } from "../../../styles/input";
+import { StyledRadioInput } from "../../../styles/input";
 export const InputRadio = forwardRef(
   (
     { label, error, ...rest }: IInputProps,

@@ -1,5 +1,5 @@
-import { createContext, useState, useEffect } from "react";
-import { User, UserCreate, UserLogin, UserProviderValues } from "./interfaces";
+import { createContext, useState } from "react";
+import { UserCreate, UserLogin, UserProviderValues } from "./interfaces";
 import { AxiosRequestConfig } from "axios";
 import { api } from "../../services/api";
 import { useNavigate } from "react-router-dom";
@@ -22,20 +22,21 @@ export const UserProvider = ({
 
   const navigate = useNavigate();
 
-  useEffect((): void => {
-    const retrieveUser = async (): Promise<void> => {
-      try {
-        setLoading(true);
-        await api.get("/users/profile", authHeader);
-        navigate("/dashboard");
-      } catch (error) {
-        console.log(error);
-        setLoading(false);
-      }
-    };
-  }, []);
+  // useEffect((): void => {
+  //   const retrieveUser = async (): Promise<void> => {
+  //     try {
+  //       setLoading(true);
+  //       await api.get("/users/profile", authHeader);
+  //       navigate("/dashboard");
+  //     } catch (error) {
+  //       console.log(error);
+  //       setLoading(false);
+  //     }
+  //   };
+  // }, []);
 
   const userRegister = async (payload: UserCreate): Promise<void> => {
+    console.log(payload);
     // payload.isDriver == "yes"
     //   ? (payload.isDriver = true)
     //   : (payload.isDriver = false);
@@ -75,6 +76,7 @@ export const UserProvider = ({
         userLogin,
         userLogout,
         userRegister,
+        setLoading,
       }}
     >
       {children}

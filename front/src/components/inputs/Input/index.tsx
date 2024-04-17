@@ -1,5 +1,4 @@
-import { ForwardedRef, InputHTMLAttributes, forwardRef } from "react";
-import { FieldError } from "react-hook-form";
+import { ForwardedRef, forwardRef } from "react";
 import { IInputProps } from "../interfaces";
 import { StyledTextInput } from "../../../styles/input";
 

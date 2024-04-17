@@ -1,6 +1,6 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { UserContext } from "./providers/UserContext";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { HomePage } from "./pages/HomePage";
 import { CreateUserForm } from "./components/forms/CreateUserForm";

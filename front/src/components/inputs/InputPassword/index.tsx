@@ -1,5 +1,4 @@
-import { ForwardedRef, InputHTMLAttributes, forwardRef, useState } from "react";
-import { FieldError } from "react-hook-form";
+import { ForwardedRef, forwardRef, useState } from "react";
 import { IInputProps } from "../interfaces";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { StyledTextInput } from "../../../styles/input";

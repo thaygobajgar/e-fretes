@@ -1,10 +1,8 @@
 import { useContext } from "react";
 import { UserContext } from "../../../providers/UserContext";
-import { UserLogin } from "../../../providers/UserContext/interfaces";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Input } from "../../inputs/Input";
 import { InputPassword } from "../../inputs/InputPassword";
-import { Link } from "react-router-dom";
 
 interface ILoginUserFormValues {
   email: string;

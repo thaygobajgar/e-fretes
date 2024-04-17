@@ -16,6 +16,7 @@ export type UserRetrieve = Omit<User, "password">;
 
 export type UserProviderValues = {
   loading: boolean;
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
   token: string;
   authHeader: AxiosRequestConfig;
 

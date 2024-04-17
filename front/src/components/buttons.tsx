@@ -15,7 +15,7 @@ const BaseButton = ({
   children,
   className,
   tag,
-  type,
+  // type,
   onClick,
 }: iBaseButtonProps) => {
   return (

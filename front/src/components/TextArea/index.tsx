@@ -1,9 +1,4 @@
-import {
-  ForwardedRef,
-  InputHTMLAttributes,
-  TextareaHTMLAttributes,
-  forwardRef,
-} from "react";
+import { ForwardedRef, TextareaHTMLAttributes, forwardRef } from "react";
 import { FieldError } from "react-hook-form";
 
 interface ITextAreaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
