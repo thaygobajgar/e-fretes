@@ -5,12 +5,15 @@ import { UserContext } from "../../../providers/UserContext";
 import { InputPassword } from "../../inputs/InputPassword";
 import Form from "../Form";
 import { StyledButton } from "../../../styles/buttons";
+import { createUserFormSchema } from "./createUserForm.schema";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 interface ICreateUserFormValues {
   name: string;
   email: string;
   phone: string;
   password: string;
+  confirmPassword: string;
 }
 
 export const CreateUserForm = () => {
@@ -20,7 +23,9 @@ export const CreateUserForm = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<ICreateUserFormValues>();
+  } = useForm<ICreateUserFormValues>({
+    resolver: zodResolver(createUserFormSchema),
+  });
 
   const submit: SubmitHandler<ICreateUserFormValues> = (formData) => {
     userRegister(formData);
@@ -42,18 +47,24 @@ export const CreateUserForm = () => {
         {...register("email")}
         error={errors.email}
       />
+      <Input
+        type="text"
+        label="Telefone:"
+        placeholder="Digite seu telefone..."
+        {...register("phone")}
+        error={errors.phone}
+      />
       <InputPassword
-        label="Password:"
+        label="Senha:"
         placeholder="Digite sua senha..."
         {...register("password")}
         error={errors.password}
       />
-      <Input
-        type="text"
-        label="Telefone:"
-        placeholder="Digite sua senha..."
-        {...register("phone")}
-        error={errors.phone}
+      <InputPassword
+        label="Confirmar senha:"
+        placeholder="Digite sua senha novamente..."
+        {...register("confirmPassword")}
+        error={errors.confirmPassword}
       />
 
       <StyledButton type="submit">Cadastrar</StyledButton>

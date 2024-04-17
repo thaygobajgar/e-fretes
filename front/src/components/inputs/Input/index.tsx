@@ -1,6 +1,6 @@
 import { ForwardedRef, forwardRef } from "react";
 import { IInputProps } from "../interfaces";
-import { StyledTextInput } from "../../../styles/input";
+import { StyledInputDiv, StyledTextInput } from "../../../styles/input";
 
 export const Input = forwardRef(
   (
@@ -8,11 +8,13 @@ export const Input = forwardRef(
     ref: ForwardedRef<HTMLInputElement>
   ) => {
     return (
-      <div>
+      <StyledInputDiv>
         {label ? <label htmlFor={rest.name}>{label}</label> : null}
-        <StyledTextInput ref={ref} {...rest} />
-        {error ? <p>{error.message}</p> : null}
-      </div>
+        <div className="input-box">
+          <StyledTextInput ref={ref} {...rest} />
+          {error ? <p>{error.message}</p> : null}
+        </div>
+      </StyledInputDiv>
     );
   }
 );

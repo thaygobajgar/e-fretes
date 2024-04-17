@@ -3,12 +3,15 @@ import { UserContext } from "../../../providers/UserContext";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Input } from "../../inputs/Input";
 import { InputPassword } from "../../inputs/InputPassword";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { loginUserFormSchema } from "./loginUserForm";
+import Form from "../Form";
+import { StyledButton } from "../../../styles/buttons";
 
 interface ILoginUserFormValues {
   email: string;
   password: string;
 }
-//loop de 1 a 10'
 
 export const LoginForm = () => {
   const { userLogin } = useContext(UserContext);
@@ -17,14 +20,16 @@ export const LoginForm = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<ILoginUserFormValues>({});
+  } = useForm<ILoginUserFormValues>({
+    resolver: zodResolver(loginUserFormSchema),
+  });
 
   const submit: SubmitHandler<ILoginUserFormValues> = (formData) => {
     userLogin(formData);
   };
 
   return (
-    <form onSubmit={handleSubmit(submit)}>
+    <Form onSubmit={handleSubmit(submit)}>
       <Input
         type="email"
         label="Email:"
@@ -39,7 +44,7 @@ export const LoginForm = () => {
         error={errors.password}
       />
 
-      <button type="submit">Cadastrar</button>
-    </form>
+      <StyledButton type="submit">Cadastrar</StyledButton>
+    </Form>
   );
 };

@@ -7,6 +7,9 @@ export const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  z-index: 9;
+  top: 0;
   & > .container {
     display: flex;
     justify-content: space-between;

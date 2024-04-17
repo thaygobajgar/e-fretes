@@ -24,3 +24,10 @@ export const StyledTextArea = styled(StyledTextInput)`
 `;
 
 export const StyledRadioInput = styled.input``;
+
+export const StyledInputDiv = styled.div`
+  p {
+    font-size: 10px;
+    color: var(--brand-1);
+  }
+`;
